@@ -1,7 +1,9 @@
 import { BrowserRouter as Router , Routes , Route } from 'react-router-dom'
 import './App.css'
 import Header from './components/header/Header'
-
+import Home from './pages/home/home'
+import MovieList from './components/header/movieList/movieList'
+import Movie from './pages/home/movieDetail/movie'
 function App() {
  
 
@@ -10,9 +12,9 @@ function App() {
       <Router>
         <Header/>
         <Routes>
-          <Route path='/' element={<h1>hello world</h1>} />
-          <Route path='movie/:id' element= {<h1> id wala is okey </h1>} />
-          <Route path='movies/:type' element= {<h1> type wala is okey </h1>} />
+          <Route index element={<Home/>} />
+          <Route path="movie/:id" element={<Movie />}></Route>
+          <Route path='movies/:type' element= {<MovieList/>} />
           <Route path='/*' element= {<h1> error h bhai  </h1>} />
         </Routes>
       </Router>
